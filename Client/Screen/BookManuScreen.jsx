@@ -124,7 +124,7 @@ export default function BookManuScreen() {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => console.log("a5")}
+            onPress={() => navigation.navigate("Bangla Alphabet")}
             style={styles.imageWrapper}
           >
             <Image

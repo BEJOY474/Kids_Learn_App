@@ -12,9 +12,9 @@ import UserScreen from "./Screen/UserScreen";
 import ProfileScreen from "./Screen/ProfileScreen";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import DrawerContent from "./DrawerContent";
- import Library from "./Screen/Library";
+import Library from "./Screen/Library";
 import Login from "./Login_Logout_Page/Login";
- import UpdateProfile from "./Screen/updateProfile/UpdateProfile";
+import UpdateProfile from "./Screen/updateProfile/UpdateProfile";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import RegisterPage from "./Login_Logout_Page/Register";
 import { useEffect, useState } from "react";
@@ -25,6 +25,7 @@ import Abc from "./Screen/allBooks/Abc";
 import OneTwo from "./Screen/allBooks/OneTwo";
 import Bird from "./Screen/allBooks/Bird";
 import AlifBaaBook from "./Screen/allBooks/AlifBaaBook";
+import BanglaAlphabet from "./Screen/allBooks/BanglaAlphabet";
 
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
@@ -166,6 +167,15 @@ const HomeStack = () => {
       <Stack.Screen
         name="Birds Book"
         component={Bird}
+        options={{
+          headerBackVisible: true,
+          headerLeft: () => null,
+        }}
+      />
+
+      <Stack.Screen
+        name="Bangla Alphabet"
+        component={BanglaAlphabet}
         options={{
           headerBackVisible: true,
           headerLeft: () => null,
