@@ -26,6 +26,7 @@ import OneTwo from "./Screen/allBooks/OneTwo";
 import Bird from "./Screen/allBooks/Bird";
 import AlifBaaBook from "./Screen/allBooks/AlifBaaBook";
 import BanglaAlphabet from "./Screen/allBooks/BanglaAlphabet";
+import FruiteBook from "./Screen/allBooks/FruiteBook";
 
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
@@ -185,6 +186,15 @@ const HomeStack = () => {
       <Stack.Screen
         name="Alif Baa Book"
         component={AlifBaaBook}
+        options={{
+          headerBackVisible: true,
+          headerLeft: () => null,
+        }}
+      />
+
+<Stack.Screen
+        name="Fruit Book"
+        component={FruiteBook}
         options={{
           headerBackVisible: true,
           headerLeft: () => null,

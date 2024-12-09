@@ -15,7 +15,7 @@ export default function Brrd() {
 
   const crow = async () => {
     try {
-      setTests("Crow");
+      setTests("Crow (কাক)");
       const { sound } = await Audio.Sound.createAsync(
         require("../../assets/BirdsSound/crow.mp3")
       );
@@ -28,7 +28,7 @@ export default function Brrd() {
 
   const crowS = async () => {
     try {
-      setTests("Crow");
+     
       const { sound } = await Audio.Sound.createAsync(
         require("../../assets/BirdsSound/crowSund.wav")
       );
@@ -41,7 +41,7 @@ export default function Brrd() {
 
   const dove = async () => {
     try {
-      setTests("Dove");
+      setTests("Dove (ঘুঘু)");
       const { sound } = await Audio.Sound.createAsync(
         require("../../assets/BirdsSound/dove.mp3")
       );
@@ -66,7 +66,7 @@ export default function Brrd() {
 
   const magpie = async () => {
     try {
-      setTests("Magpie");
+      setTests("Magpie (দোয়েল)");
       const { sound } = await Audio.Sound.createAsync(
         require("../../assets/BirdsSound/magpie.mp3")
       );
@@ -91,7 +91,7 @@ export default function Brrd() {
 
   const duck = async () => {
     try {
-      setTests("Duck");
+      setTests("Duck (হাঁস)");
       const { sound } = await Audio.Sound.createAsync(
         require("../../assets/BirdsSound/duck.mp3")
       );
@@ -116,7 +116,7 @@ export default function Brrd() {
 
   const eagle = async () => {
     try {
-      setTests("Eagle");
+      setTests("Eagle (ঈগল)");
       const { sound } = await Audio.Sound.createAsync(
         require("../../assets/BirdsSound/eagle.mp3")
       );
@@ -141,7 +141,7 @@ export default function Brrd() {
 
   const heron = async () => {
     try {
-      setTests("Heron");
+      setTests("Heron (বক)");
       const { sound } = await Audio.Sound.createAsync(
         require("../../assets/BirdsSound/heron.mp3")
       );
@@ -166,7 +166,7 @@ export default function Brrd() {
 
   const hurmming = async () => {
     try {
-      setTests("Humming-Bird");
+      setTests("Humming-Bird (হামিং-বার্ড)");
       const { sound } = await Audio.Sound.createAsync(
         require("../../assets/BirdsSound/humming.mp3")
       );
@@ -191,7 +191,7 @@ export default function Brrd() {
 
   const king = async () => {
     try {
-      setTests("Kingfisher");
+      setTests("Kingfisher (মাছরাঙ্গা)");
       const { sound } = await Audio.Sound.createAsync(
         require("../../assets/BirdsSound/kingfisher.mp3")
       );
@@ -216,7 +216,7 @@ export default function Brrd() {
 
   const martin = async () => {
     try {
-      setTests("Martin");
+      setTests("Martin (মার্টিন)");
       const { sound } = await Audio.Sound.createAsync(
         require("../../assets/BirdsSound/Martin.mp3")
       );
@@ -241,7 +241,7 @@ export default function Brrd() {
 
   const myna = async () => {
     try {
-      setTests("Myna");
+      setTests("Myna (ময়না)");
       const { sound } = await Audio.Sound.createAsync(
         require("../../assets/BirdsSound/Myna.mp3")
       );
@@ -266,7 +266,7 @@ export default function Brrd() {
 
   const night = async () => {
     try {
-      setTests("Nightingale");
+      setTests("Nightingale (নাইটিঙ্গেল)");
       const { sound } = await Audio.Sound.createAsync(
         require("../../assets/BirdsSound/Nightingale.mp3")
       );
@@ -291,7 +291,7 @@ export default function Brrd() {
 
   const kook = async () => {
     try {
-      setTests("kookaburra");
+      setTests("kookaburra (কুকাবুরা)");
       const { sound } = await Audio.Sound.createAsync(
         require("../../assets/BirdsSound/kookaburra.mp3")
       );
@@ -316,7 +316,7 @@ export default function Brrd() {
 
   const ostrich = async () => {
     try {
-      setTests("Ostrich");
+      setTests("Ostrich (উটপাখি)");
       const { sound } = await Audio.Sound.createAsync(
         require("../../assets/BirdsSound/Ostrich.mp3")
       );
@@ -341,7 +341,7 @@ export default function Brrd() {
 
   const owl = async () => {
     try {
-      setTests("Owl");
+      setTests("Owl (পেঁচা)");
       const { sound } = await Audio.Sound.createAsync(
         require("../../assets/BirdsSound/owl.mp3")
       );
@@ -366,7 +366,7 @@ export default function Brrd() {
 
   const spro = async () => {
     try {
-      setTests("Sparrow");
+      setTests("Sparrow (চড়ুই)");
       const { sound } = await Audio.Sound.createAsync(
         require("../../assets/BirdsSound/sparrow.mp3")
       );
@@ -785,6 +785,7 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 55,
     justifyContent: "space-around",
+    paddingBottom:"30%",
   },
 
   singleImg: {

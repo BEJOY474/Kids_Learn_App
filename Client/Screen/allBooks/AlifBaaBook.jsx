@@ -717,6 +717,7 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 55,
     justifyContent: "space-around",
+    paddingBottom:"30%",
   },
 
   singleImg: {

@@ -67,10 +67,11 @@ export default function ProfileScreen() {
 
     }}
 
+   
     
     style={styles.profileImage}
   />
-  <Text style={styles.userName}>{useData.name}</Text>
+  <Text style={styles.userName}>{useData.name  }</Text>
 </View>
       </ImageBackground>
 
