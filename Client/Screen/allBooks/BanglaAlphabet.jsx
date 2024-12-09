@@ -12,11 +12,11 @@ export default function BanglaAlphabet() {
   const [texts, setTests] = useState("Hello Kids!");
   const [bgMusicEnabled, setBgMusicEnabled] = useState(true);
   const bgSound = useRef(null);
-  const playSoundA = async () => {
+  const oo = async () => {
     try {
-      setTests("A for Apple");
+      setTests("অ");
       const { sound } = await Audio.Sound.createAsync(
-        require("../../assets/ABC_Audio/a.mp3")
+        require("../../assets/banglaAlphabetSound/ani1.mp3")
       );
       setSound(sound);
       await sound.playAsync();
@@ -25,11 +25,11 @@ export default function BanglaAlphabet() {
     }
   };
 
-  const playSoundB = async () => {
+  const aa = async () => {
     try {
-      setTests("B for Ball");
+      setTests("আ");
       const { sound } = await Audio.Sound.createAsync(
-        require("../../assets/ABC_Audio/b.mp3")
+        require("../../assets/banglaAlphabetSound/ani2.mp3")
       );
       setSound(sound);
       await sound.playAsync();
@@ -38,11 +38,11 @@ export default function BanglaAlphabet() {
     }
   };
 
-  const playSoundC = async () => {
+  const ee = async () => {
     try {
-      setTests("C for Cat");
+      setTests("ই");
       const { sound } = await Audio.Sound.createAsync(
-        require("../../assets/ABC_Audio/c.mp3")
+        require("../../assets/banglaAlphabetSound/ani3.mp3")
       );
       setSound(sound);
       await sound.playAsync();
@@ -51,11 +51,11 @@ export default function BanglaAlphabet() {
     }
   };
 
-  const playSoundD = async () => {
+  const eee = async () => {
     try {
-      setTests("D for Duck");
+      setTests("ঈ");
       const { sound } = await Audio.Sound.createAsync(
-        require("../../assets/ABC_Audio/d.mp3")
+        require("../../assets/banglaAlphabetSound/ani4.mp3")
       );
       setSound(sound);
       await sound.playAsync();
@@ -64,11 +64,11 @@ export default function BanglaAlphabet() {
     }
   };
 
-  const playSoundE = async () => {
+  const uu = async () => {
     try {
-      setTests("E for Elephant");
+      setTests("উ");
       const { sound } = await Audio.Sound.createAsync(
-        require("../../assets/ABC_Audio/e.mp3")
+        require("../../assets/banglaAlphabetSound/ani5.mp3")
       );
       setSound(sound);
       await sound.playAsync();
@@ -77,11 +77,11 @@ export default function BanglaAlphabet() {
     }
   };
 
-  const playSoundF = async () => {
+  const uuu = async () => {
     try {
-      setTests("F for Fish");
+      setTests("ঊ");
       const { sound } = await Audio.Sound.createAsync(
-        require("../../assets/ABC_Audio/f.mp3")
+        require("../../assets/banglaAlphabetSound/ani6.mp3")
       );
       setSound(sound);
       await sound.playAsync();
@@ -90,11 +90,11 @@ export default function BanglaAlphabet() {
     }
   };
 
-  const playSoundG = async () => {
+  const rii = async () => {
     try {
-      setTests("G for Grapes");
+      setTests("ঋ");
       const { sound } = await Audio.Sound.createAsync(
-        require("../../assets/ABC_Audio/g.mp3")
+        require("../../assets/banglaAlphabetSound/ani7.mp3")
       );
       setSound(sound);
       await sound.playAsync();
@@ -103,11 +103,11 @@ export default function BanglaAlphabet() {
     }
   };
 
-  const playSoundH = async () => {
+  const aea = async () => {
     try {
-      setTests("H for Hen");
+      setTests("এ");
       const { sound } = await Audio.Sound.createAsync(
-        require("../../assets/ABC_Audio/h.mp3")
+        require("../../assets/banglaAlphabetSound/ani8.mp3")
       );
       setSound(sound);
       await sound.playAsync();
@@ -116,11 +116,11 @@ export default function BanglaAlphabet() {
     }
   };
 
-  const playSoundI = async () => {
+  const oii = async () => {
     try {
-      setTests("I for Ink");
+      setTests("ঐ");
       const { sound } = await Audio.Sound.createAsync(
-        require("../../assets/ABC_Audio/i.mp3")
+        require("../../assets/banglaAlphabetSound/ani9.mp3")
       );
       setSound(sound);
       await sound.playAsync();
@@ -129,11 +129,11 @@ export default function BanglaAlphabet() {
     }
   };
 
-  const playSoundJ = async () => {
+  const ouu = async () => {
     try {
-      setTests("J for Juice");
+      setTests("ও");
       const { sound } = await Audio.Sound.createAsync(
-        require("../../assets/ABC_Audio/j.mp3")
+        require("../../assets/banglaAlphabetSound/ani10.mp3")
       );
       setSound(sound);
       await sound.playAsync();
@@ -142,11 +142,11 @@ export default function BanglaAlphabet() {
     }
   };
 
-  const playSoundK = async () => {
+  const ouuu = async () => {
     try {
-      setTests("K for Kite");
+      setTests("ঔ");
       const { sound } = await Audio.Sound.createAsync(
-        require("../../assets/ABC_Audio/k.mp3")
+        require("../../assets/banglaAlphabetSound/ani11.mp3")
       );
       setSound(sound);
       await sound.playAsync();
@@ -154,12 +154,11 @@ export default function BanglaAlphabet() {
       console.error(error);
     }
   };
-
 
   const loadBgSound = async () => {
     try {
       const { sound } = await Audio.Sound.createAsync(
-        require("../../assets/ABC_Audio/abc.mp3")
+        require("../../assets/banglaAlphabetSound/banglaVowelBg.mp3")
       );
       bgSound.current = sound;
       await bgSound.current.setIsLoopingAsync(true);
@@ -211,77 +210,77 @@ export default function BanglaAlphabet() {
 
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <View style={styles.container}>
-          <TouchableOpacity onPress={playSoundA} style={styles.imageWrapper}>
+          <TouchableOpacity onPress={oo} style={styles.imageWrapper}>
             <Image
               source={require("../../assets/BanglaAlphabetPic/1.png")}
               style={styles.image}
             />
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={playSoundB} style={styles.imageWrapper}>
+          <TouchableOpacity onPress={aa} style={styles.imageWrapper}>
             <Image
               source={require("../../assets/BanglaAlphabetPic/2.png")}
               style={styles.image}
             />
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={playSoundC} style={styles.imageWrapper}>
+          <TouchableOpacity onPress={ee} style={styles.imageWrapper}>
             <Image
               source={require("../../assets/BanglaAlphabetPic/3.png")}
               style={styles.image}
             />
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={playSoundD} style={styles.imageWrapper}>
+          <TouchableOpacity onPress={eee} style={styles.imageWrapper}>
             <Image
               source={require("../../assets/BanglaAlphabetPic/4.png")}
               style={styles.image}
             />
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={playSoundE} style={styles.imageWrapper}>
+          <TouchableOpacity onPress={uu} style={styles.imageWrapper}>
             <Image
               source={require("../../assets/BanglaAlphabetPic/5.png")}
               style={styles.image}
             />
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={playSoundF} style={styles.imageWrapper}>
+          <TouchableOpacity onPress={uuu} style={styles.imageWrapper}>
             <Image
               source={require("../../assets/BanglaAlphabetPic/6.png")}
               style={styles.image}
             />
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={playSoundG} style={styles.imageWrapper}>
+          <TouchableOpacity onPress={rii} style={styles.imageWrapper}>
             <Image
               source={require("../../assets/BanglaAlphabetPic/7.png")}
               style={styles.image}
             />
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={playSoundH} style={styles.imageWrapper}>
+          <TouchableOpacity onPress={aea} style={styles.imageWrapper}>
             <Image
               source={require("../../assets/BanglaAlphabetPic/8.png")}
               style={styles.image}
             />
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={playSoundI} style={styles.imageWrapper}>
+          <TouchableOpacity onPress={oii} style={styles.imageWrapper}>
             <Image
               source={require("../../assets/BanglaAlphabetPic/9.png")}
               style={styles.image}
             />
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={playSoundJ} style={styles.imageWrapper}>
+          <TouchableOpacity onPress={ouu} style={styles.imageWrapper}>
             <Image
               source={require("../../assets/BanglaAlphabetPic/10.png")}
               style={styles.image}
             />
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={playSoundK} style={styles.imageWrapper}>
+          <TouchableOpacity onPress={ouuu} style={styles.imageWrapper}>
             <Image
               source={require("../../assets/BanglaAlphabetPic/11.png")}
               style={styles.image}
@@ -316,6 +315,7 @@ const styles = StyleSheet.create({
   },
 
   container: {
+    paddingBottom:"30%",
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-around",

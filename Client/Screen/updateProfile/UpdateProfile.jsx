@@ -51,10 +51,10 @@ function UpdateProfile({ props }) {
       gender,
       profession,
     };
-
+//user/updateUserData
     try {
       const res = await axios.post(
-        "http://192.168.0.103:3000/api/user/updateUserData",
+        `${apiUrl}/api/user/updateUserData`,
         userData
       );
       setLoading(false);

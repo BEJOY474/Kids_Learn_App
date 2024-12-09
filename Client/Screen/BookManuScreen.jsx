@@ -88,7 +88,7 @@ export default function BookManuScreen() {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => console.log("a3")}
+            onPress={() => navigation.navigate("Fruit Book")}
             style={styles.imageWrapper}
           >
             <Image
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
     pointerEvents: "none",
   },
   scrollContainer: {
-    paddingBottom: 230,
+    paddingBottom: '100%',
   },
   container: {
     flexDirection: "row",

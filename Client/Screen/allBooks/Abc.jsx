@@ -613,6 +613,7 @@ const styles = StyleSheet.create({
   },
 
   container: {
+    paddingBottom:"30%",
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-around",
