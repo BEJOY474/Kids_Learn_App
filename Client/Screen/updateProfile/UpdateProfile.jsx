@@ -26,6 +26,7 @@ function UpdateProfile({ props }) {
   const [gender, setGender] = useState("Male");
   const [profession, setProfession] = useState("Engineer");
   const [mobile, setMobile] = useState("");
+  const [userId , setUserId] = useState("");
   const [loading, setLoading] = useState(true);
 
   const selectPhoto = async () => {
@@ -41,6 +42,35 @@ function UpdateProfile({ props }) {
     }
   };
 
+  const getData = async () => {
+    try {
+      const token = await AsyncStorage.getItem("token");
+      const response = await axios.post(
+        `${apiUrl}/api/user/userData`,
+        { token: token }
+      );
+
+      console.log("User data:", response.data.data);
+
+      const userData = response.data.data;
+      setUserId(userData._id)
+      setName(userData.name);
+      setEmail(userData.email);
+      setMobile(userData.mobile);
+      setGender(userData.gender);
+      setImage(userData.image);
+      setProfession(userData.profession);
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   const update = async () => {
     setLoading(true);
     const userData = {
@@ -53,8 +83,8 @@ function UpdateProfile({ props }) {
     };
 //user/updateUserData
     try {
-      const res = await axios.post(
-        `${apiUrl}/api/user/updateUserData`,
+      const res = await axios.put(
+        `${apiUrl}/api/user/updateUserData/${userId}`,
         userData
       );
       setLoading(false);
@@ -77,34 +107,6 @@ function UpdateProfile({ props }) {
     }
     console.log("Data : ", userData);
   };
-
-  const getData = async () => {
-    try {
-      const token = await AsyncStorage.getItem("token");
-      const response = await axios.post(
-        `${apiUrl}/api/user/userData`,
-        { token: token }
-      );
-
-      console.log("User data:", response.data.data);
-
-      const userData = response.data.data;
-      setName(userData.name);
-      setEmail(userData.email);
-      setMobile(userData.mobile);
-      setGender(userData.gender);
-      setImage(userData.image);
-      setProfession(userData.profession);
-    } catch (error) {
-      console.error("Error fetching user data:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
 
   if (loading) {
     return (
@@ -157,7 +159,7 @@ function UpdateProfile({ props }) {
             </View>
 
             <View style={styles.infoEditView}>
-              <Text style={styles.infoEditFirst_text}>Email</Text>
+              <Text style={styles.infoEditFirst_text}>Email </Text>
               <TextInput
                 editable={false}
                 placeholder="Your Email"

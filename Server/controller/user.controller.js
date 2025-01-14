@@ -48,22 +48,24 @@ exports.createUser = async (req, res) => {
 };
 
 exports.userLogin = async (req, res) => {
+  console.log("User Login call");
   try {
     const { email, password } = req.body;
 
-    // Check if user exists
+    // Find the user by email
     const user = await User.findOne({ email });
+    console.log("User Data:", user);
 
+    // Check if user exists
     if (!user) {
-      return res.status(400).json({
-        statusCode: 400,
+      return res.status(404).json({
+        statusCode: 404,
         message: "User does not exist with this email. Please register first!",
       });
     }
 
-    // Compare passwords
-    const isLoginMatch = bcrypt.compare(password, user.password); // Await is added
-
+    // Compare passwords (ensure you await bcrypt.compare)
+    const isLoginMatch = await bcrypt.compare(password, user.password);
     if (!isLoginMatch) {
       return res.status(400).json({
         statusCode: 400,
@@ -71,10 +73,10 @@ exports.userLogin = async (req, res) => {
       });
     }
 
-    // Check if user is banned
+    // Check if the user is banned
     if (user.isBanned) {
-      return res.status(400).json({
-        statusCode: 400,
+      return res.status(403).json({
+        statusCode: 403,
         message: "User is banned!",
       });
     }
@@ -90,7 +92,7 @@ exports.userLogin = async (req, res) => {
     res.cookie("access_token", accessToken, {
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
       httpOnly: true,
-      secure: true, // Make sure to use secure: true in production
+      secure: true, // Use secure: true in production
       sameSite: "none",
     });
 
@@ -102,6 +104,7 @@ exports.userLogin = async (req, res) => {
       token: accessToken,
     });
   } catch (error) {
+    console.error("Error during login:", error);
     return res.status(500).json({
       statusCode: 500,
       message: "Internal server error",
@@ -125,10 +128,11 @@ exports.userData = (req, res) => {
 };
 
 exports.updateUserData = async (req, res) => {
+  const { id } = req.params;
   const { name, email, mobile, image, gender, profession } = req.body;
   try {
     await User.updateOne(
-      { email: email },
+      { _id: id },
       {
         $set: {
           name,
@@ -152,3 +156,21 @@ exports.updateUserData = async (req, res) => {
     });
   }
 };
+
+exports.deleteUser = async (req, res) => {
+  const { id } = req.params;
+  console.log("User id : ",id);
+  try {
+    await User.deleteOne({ _id: id });  // Corrected deleteOne usage
+    return res.status(200).json({
+      statusCode: 200,
+      message: "User deleted successfully!!",
+    });
+  }
+  catch (error) {
+    return res.status(500).json({
+      statusCode: 500,
+      message: "Something is wrong!",
+    });
+  }
+}

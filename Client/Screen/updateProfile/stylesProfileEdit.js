@@ -126,7 +126,7 @@ export default StyleSheet.create({
   },
   
   updateButton: {
-    backgroundColor: "#4A90E2", // A pleasant blue color
+    backgroundColor: "#4A90E2", 
     paddingVertical: 12,
     paddingHorizontal: 30,
     borderRadius: 25,

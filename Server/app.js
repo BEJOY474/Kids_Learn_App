@@ -5,6 +5,7 @@ const app = express();
 const morgan = require("morgan");
 
 const userRoute = require('./route/user.route')
+const adminRoute = require('./route/admin.route')
 
 // mongodb connection
 require("./config/db");
@@ -21,6 +22,10 @@ app.use(cors());
 //all user route
 app.use("/api/user", userRoute);
 
+//all admin route
+app.use("/api/admin", adminRoute)
+
+//test route
 app.get("/", (req, res) => {
   res.send({
     massage: "hello bijoy",

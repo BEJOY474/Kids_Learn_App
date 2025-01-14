@@ -453,7 +453,7 @@ export default function Brrd() {
                 style={styles.image}
               />
               <View style={{ alignSelf: "center", top: -20 }}>
-                <Text>Crow</Text>
+                <Text style={styles.dtlsNm} >Crow</Text>
               </View>
             </TouchableOpacity>
 
@@ -474,7 +474,7 @@ export default function Brrd() {
                 style={styles.image}
               />
               <View style={{ alignSelf: "center", top: -20 }}>
-                <Text>Dove</Text>
+                <Text style={styles.dtlsNm} >Dove</Text>
               </View>
             </TouchableOpacity>
 
@@ -495,7 +495,7 @@ export default function Brrd() {
                 style={styles.image}
               />
               <View style={{ alignSelf: "center", top: -20 }}>
-                <Text>Magpie</Text>
+                <Text style={styles.dtlsNm} >Magpie</Text>
               </View>
             </TouchableOpacity>
 
@@ -516,7 +516,7 @@ export default function Brrd() {
                 style={styles.image}
               />
               <View style={{ alignSelf: "center", top: -20 }}>
-                <Text>Duck</Text>
+                <Text style={styles.dtlsNm} >Duck</Text>
               </View>
             </TouchableOpacity>
 
@@ -537,7 +537,7 @@ export default function Brrd() {
                 style={styles.image}
               />
               <View style={{ alignSelf: "center", top: -20 }}>
-                <Text>Eagle</Text>
+                <Text style={styles.dtlsNm} >Eagle</Text>
               </View>
             </TouchableOpacity>
 
@@ -558,7 +558,7 @@ export default function Brrd() {
                 style={styles.image}
               />
               <View style={{ alignSelf: "center", top: -20 }}>
-                <Text>Heron</Text>
+                <Text style={styles.dtlsNm} >Heron</Text>
               </View>
             </TouchableOpacity>
 
@@ -580,7 +580,7 @@ export default function Brrd() {
               />
             </TouchableOpacity>
             <View style={{ alignSelf: "center", top: -20 }}>
-              <Text>Humming-Bird</Text>
+              <Text style={styles.dtlsNm} >Humming-Bird</Text>
             </View>
             <TouchableOpacity onPress={hurmmingS} style={styles.imageWrapper}>
               <Icon
@@ -600,7 +600,7 @@ export default function Brrd() {
               />
             </TouchableOpacity>
             <View style={{ alignSelf: "center", top: -20 }}>
-              <Text>Kingfisher</Text>
+              <Text style={styles.dtlsNm} >Kingfisher</Text>
             </View>
             <TouchableOpacity onPress={kingS} style={styles.imageWrapper}>
               <Icon
@@ -620,7 +620,7 @@ export default function Brrd() {
               />
             </TouchableOpacity>
             <View style={{ alignSelf: "center", top: -20 }}>
-              <Text>Kookaburra</Text>
+              <Text style={styles.dtlsNm} >Kookaburra</Text>
             </View>
             <TouchableOpacity onPress={kookS} style={styles.imageWrapper}>
               <Icon
@@ -639,7 +639,7 @@ export default function Brrd() {
                 style={styles.image}
               />
               <View style={{ alignSelf: "center", top: -20 }}>
-                <Text>Martin</Text>
+                <Text style={styles.dtlsNm} >Martin</Text>
               </View>
             </TouchableOpacity>
 
@@ -660,7 +660,7 @@ export default function Brrd() {
                 style={styles.image}
               />
               <View style={{ alignSelf: "center", top: -20 }}>
-                <Text>Myna</Text>
+                <Text style={styles.dtlsNm} >Myna</Text>
               </View>
             </TouchableOpacity>
 
@@ -682,7 +682,7 @@ export default function Brrd() {
               />
             </TouchableOpacity>
             <View style={{ alignSelf: "center", top: -20 }}>
-              <Text>Nightingale</Text>
+              <Text style={styles.dtlsNm} >Nightingale</Text>
             </View>
             <TouchableOpacity onPress={nightS} style={styles.imageWrapper}>
               <Icon
@@ -701,7 +701,7 @@ export default function Brrd() {
                 style={styles.image}
               />
               <View style={{ alignSelf: "center", top: -20 }}>
-                <Text>Ostrich</Text>
+                <Text style={styles.dtlsNm} >Ostrich</Text>
               </View>
             </TouchableOpacity>
 
@@ -722,7 +722,7 @@ export default function Brrd() {
                 style={styles.image}
               />
               <View style={{ alignSelf: "center", top: -20 }}>
-                <Text>Owl</Text>
+                <Text style={styles.dtlsNm} >Owl</Text>
               </View>
             </TouchableOpacity>
 
@@ -743,7 +743,7 @@ export default function Brrd() {
                 style={styles.image}
               />
               <View style={{ alignSelf: "center", top: -20 }}>
-                <Text>Sparrow</Text>
+                <Text style={styles.dtlsNm} >Sparrow</Text>
               </View>
             </TouchableOpacity>
 
@@ -788,6 +788,14 @@ const styles = StyleSheet.create({
     paddingBottom:"30%",
   },
 
+  dtlsNm: {
+    fontSize: 18,
+    color: "#000",
+    textAlign: "center",
+    marginTop: 10,
+    top: 13
+  },
+
   singleImg: {
     width: "45%",
     marginBottom: 10,
@@ -797,7 +805,7 @@ const styles = StyleSheet.create({
   },
 
   imageWrapper: {
-    width: "40%",
+    width: "100%",
     marginBottom: 1,
     borderRadius: 10,
     overflow: "hidden",

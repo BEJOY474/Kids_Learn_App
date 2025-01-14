@@ -25,11 +25,9 @@ export default function HomeScreen() {
   // Fetch user data using AsyncStorage token
   const getData = async () => {
     const token = await AsyncStorage.getItem("token");
-    axios
-      .post(`${apiUrl}/api/user/userData`, { token: token })
-      .then((res) => {
-        setUserData(res.data.data);
-      });
+    axios.post(`${apiUrl}/api/user/userData`, { token: token }).then((res) => {
+      setUserData(res.data.data);
+    });
   };
 
   // Handle back button press to show exit confirmation
@@ -73,7 +71,6 @@ export default function HomeScreen() {
   // Array of image URLs for the carousel
   const imageUrls = [
     "https://celebratepicturebooks.com/wp-content/uploads/2020/04/screen-shot-2020-04-14-at-4.50.42-pm.png?w=440",
-
     "https://lurnsmart.com/wp-content/uploads/2021/04/ABC-Books-for-Kids-Resized-1.jpg",
     "https://i.pinimg.com/736x/8c/92/1a/8c921a00f9fb44485f58376cecef22d8.jpg",
     "https://static.wikia.nocookie.net/animals-are-cool/images/a/a0/Super-Dee-Dooper_Book_of_Animal_Facts_1.jpg/revision/latest/scale-to-width-down/1200?cb=20230830111954",
@@ -92,19 +89,20 @@ export default function HomeScreen() {
       {/* Top Carousel */}
       <Carousel
         loop
-        width={width} // Set the carousel width to the screen width
-        height={width / 2} // Set height as a fraction of width for 100% coverage
+        width={width} 
+        height={width / 2} 
         autoPlay={true}
         data={imageUrls}
         scrollAnimationDuration={1000}
         renderItem={({ index }) => (
-          <View>
             <Image
-              source={{ uri: imageUrls[index] }}
-              style={styles.carouselImage}
-              resizeMode="contain"
-            />
-          </View>
+                  source={{ uri: imageUrls[index] }}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                  }}
+                  resizeMode= 'stretch'
+                />
         )}
       />
 
@@ -140,8 +138,8 @@ export default function HomeScreen() {
       {/* Bottom Carousel */}
       <Carousel
         loop
-        width={width} 
-        height={width / 2} 
+        width={width}
+        height={width / 2}
         autoPlay={true}
         data={textData}
         scrollAnimationDuration={2000}
@@ -170,7 +168,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     overflow: "hidden",
     backgroundColor: "#8a39cb",
-  bottom : "-26%",
+    bottom: "-26%",
     padding: 20,
   },
   carouselImage: {
