@@ -40,7 +40,7 @@ export default function BookManuScreen() {
           style={styles.video}
           isLooping
           isMuted={false} // Keep sound if you want
-          resizeMode="cover" // You can use 'cover' to ensure it fills the screen without stretching
+          resizeMode= 'stretch' // Stretch the video to fit the screen
           shouldPlay
         />
       </View>
@@ -97,7 +97,7 @@ export default function BookManuScreen() {
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => console.log("a4")}
+            onPress={() => navigation.navigate("Animal Book")}
             style={styles.imageWrapper}
           >
             <Image
@@ -105,10 +105,22 @@ export default function BookManuScreen() {
               style={styles.image}
             />
           </TouchableOpacity>
+
           <TouchableOpacity
-            onPress={() => console.log("a5")}
+            onPress={() => navigation.navigate("Vegetable Book")}
             style={styles.imageWrapper}
           >
+            <Image
+              source={require("../assets/ABC/vg.png")}
+              style={styles.image}
+            />
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Rhymes Book")}
+            style={styles.imageWrapper}
+          >
+             
             <Image
               source={require("../assets/ABC/rhy.jpg")}
               style={styles.image}
@@ -151,7 +163,7 @@ const styles = StyleSheet.create({
   },
   middleContainer: {
     backgroundColor: "#8a39cb",
-    width: "35%",
+    width: "45%",
     padding: 10,
     marginTop: 10,
     marginLeft: "4%",
@@ -171,14 +183,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   imageWrapper: {
-    width: "30%",
+    width: "45%",
     marginBottom: 10,
     marginTop: 5,
   },
   image: {
     width: "100%",
-    height: 150,
-    resizeMode: "contain",
-    borderRadius: 10,
+    height: 200,
+    resizeMode: 'stretch',
+    borderRadius: 5,
   },
 });

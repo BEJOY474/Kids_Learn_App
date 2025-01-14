@@ -40,43 +40,37 @@ export default function Login({ props }) {
  
   const handleSubmit = async () => {
     if (!email || !password) {
-     // Alert.alert("Error", "Please enter both email and password.");
       Toast.show({
         type: 'error',
-        text1:'Error',
+        text1: 'Error',
         text2: 'Please enter both email and password.',
-        visibilityTime: 3000
-
+        visibilityTime: 3000,
       });
       return;
     }
-
+  
     setLoading(true);
     const userData = { email, password };
-
+  
     try {
-      const res = await axios.post(
-        `${apiUrl}/api/user/login`,
-        userData
-      );
-    //  Alert.alert("", res.data.message);
+      const res = await axios.post(`${apiUrl}/api/user/login`, userData);
+  
       AsyncStorage.setItem("token", res.data.token);
       AsyncStorage.setItem("isLoggedin", JSON.stringify(true));
       navigation.navigate("Home");
     } catch (err) {
-      console.error(err);
-     // Alert.alert("Error", "Invalid user!");
+   
       Toast.show({
         type: 'error',
-        text1:'Error',
-        text2: 'Invalid user!',
-        visibilityTime: 3000
-
+        text1: 'Error',
+        text2: err.response?.data?.message || "An unexpected error occurred.",
+        visibilityTime: 3000,
       });
     } finally {
       setLoading(false);
-    }
+}
   };
+  
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -187,6 +181,16 @@ export default function Login({ props }) {
               style={styles.bottomText}
             >
               Guest
+            </Text>
+          </View>
+
+          <View style={styles.createAccountContainer}>
+            <Text>Login </Text>
+            <Text
+              onPress={() => navigation.navigate("AdminLog")}
+              style={styles.bottomText}
+            >
+              Admin
             </Text>
           </View>
 

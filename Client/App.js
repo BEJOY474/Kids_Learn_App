@@ -27,6 +27,12 @@ import Bird from "./Screen/allBooks/Bird";
 import AlifBaaBook from "./Screen/allBooks/AlifBaaBook";
 import BanglaAlphabet from "./Screen/allBooks/BanglaAlphabet";
 import FruiteBook from "./Screen/allBooks/FruiteBook";
+import AdminLogin from "./Admin_Login_Reg_Page/AdminLogin";
+import AdminHome from "./Admin_Login_Reg_Page/AdminHome";
+import Animal from "./Screen/allBooks/Animal";
+import Vegetable from "./Screen/allBooks/Vegetable";
+import Rhyme from "./Screen/allBooks/Rhyme";
+import Rhymes from "./Screen/allBooks/Rhymes";
 
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
@@ -113,7 +119,7 @@ const HomeStack = () => {
       />
 
       <Stack.Screen
-        name="User"
+        name="Delete User Account"
         component={UserScreen}
         options={{
           headerBackVisible: true,
@@ -143,6 +149,7 @@ const HomeStack = () => {
         component={BookManuScreen}
         options={{
           headerBackVisible: true,
+          headerBackTitleVisible: false,
           headerLeft: () => null, // Remove menu icon
         }}
       />
@@ -192,12 +199,76 @@ const HomeStack = () => {
         }}
       />
 
-<Stack.Screen
+      <Stack.Screen
         name="Fruit Book"
         component={FruiteBook}
         options={{
           headerBackVisible: true,
           headerLeft: () => null,
+        }}
+      />
+
+      <Stack.Screen
+        name="Animal Book"
+        component={Animal}
+        options={{
+          headerBackVisible: true,
+
+          headerLeft: () => null,
+        }}
+      />
+      <Stack.Screen
+        name="Vegetable Book"
+        component={Vegetable}
+        options={{
+          headerBackVisible: true,
+          headerLeft: () => null,
+        }}
+      />
+
+      <Stack.Screen
+        name="Rhymes Book"
+        component={Rhyme}
+        options={{
+          headerBackVisible: true,
+          headerLeft: () => null,
+        }}
+      />
+
+      <Stack.Screen
+        name="Rhymes"
+        component={Rhymes}
+        options={{
+          headerBackVisible: true,
+          headerLeft: () => null,
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const HomeStackAdmin = () => {
+  const navigation = useNavigation();
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: { backgroundColor: "#8a39cb" },
+        headerTintColor: "#fff",
+        headerTitleAlign: "center",
+      }}
+    >
+      <Stack.Screen
+        name="Kids Learn Admin"
+        component={AdminHome}
+        options={{ headerShown: false }}
+      />
+
+      <Stack.Screen
+        name="User"
+        component={UserScreen}
+        options={{
+          headerBackVisible: true,
+          headerLeft: () => null, // Remove menu icon
         }}
       />
     </Stack.Navigator>
@@ -209,15 +280,18 @@ const DrawerNav = () => {
     <Drawer.Navigator
       drawerContent={(props) => <DrawerContent {...props} />}
       screenOptions={{
+        headerBackTitleVisible: false,
         headerShown: false,
       }}
     >
       {/* Login and Register screens with no menu icon */}
       <Drawer.Screen name="Login" component={Login} options={{}} />
       <Drawer.Screen name="Register" component={RegisterPage} />
+      <Drawer.Screen name="AdminLog" component={AdminLogin} />
 
       {/* Main screens wrapped in a stack navigator */}
       <Drawer.Screen name="Home" component={HomeStack} />
+      <Drawer.Screen name="AdminHome" component={HomeStackAdmin} />
     </Drawer.Navigator>
   );
 };
@@ -227,6 +301,7 @@ const DrawerNavLogin = () => {
     <Drawer.Navigator
       drawerContent={(props) => <DrawerContent {...props} />}
       screenOptions={{
+        headerBackTitleVisible: false,
         headerShown: false,
       }}
     >
@@ -234,6 +309,8 @@ const DrawerNavLogin = () => {
       <Drawer.Screen name="Home" component={HomeStack} />
       <Drawer.Screen name="Login" component={Login} options={{}} />
       <Drawer.Screen name="Register" component={RegisterPage} />
+      <Drawer.Screen name="AdminLog" component={AdminLogin} />
+      <Drawer.Screen name="AdminHome" component={HomeStackAdmin} />
     </Drawer.Navigator>
   );
 };

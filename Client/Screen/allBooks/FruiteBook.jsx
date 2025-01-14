@@ -202,6 +202,7 @@ export default function OneTwo() {
               source={require("../../assets/FruitsPic/apple.jpg")}
               style={styles.image}
             />
+              <Text style={{textAlign:'center', fontSize:18 }}>Apple</Text>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={playSound2} style={styles.imageWrapper}>
@@ -209,13 +210,15 @@ export default function OneTwo() {
               source={require("../../assets/FruitsPic/mango.jpg")}
               style={styles.image}
             />
+            <Text style={{textAlign:'center', fontSize:18 }}>Mango</Text>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={playSound3} style={styles.imageWrapper}>
             <Image
-                source={require("../../assets/FruitsPic/Orange.jpg")}
+                source={require("../../assets/FruitsPic/Orange.png")}
               style={styles.image}
             />
+            <Text style={{textAlign:'center', fontSize:18 }}>Orange</Text>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={playSound4} style={styles.imageWrapper}>
@@ -223,6 +226,7 @@ export default function OneTwo() {
                source={require("../../assets/FruitsPic/kola.jpg")}
               style={styles.image}
             />
+            <Text style={{textAlign:'center', fontSize:18 }}>Banana</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -233,6 +237,7 @@ export default function OneTwo() {
                source={require("../../assets/FruitsPic/grape.jpg")}
               style={styles.image}
             />
+            <Text style={{textAlign:'center', fontSize:18 }}>Grape</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -243,6 +248,7 @@ export default function OneTwo() {
                source={require("../../assets/FruitsPic/kathal.jpg")}
               style={styles.image}
             />
+            <Text style={{textAlign:'center', fontSize:18 }}>Jackfruit</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -253,6 +259,7 @@ export default function OneTwo() {
                source={require("../../assets/FruitsPic/litchi.jpg")}
               style={styles.image}
             />
+            <Text style={{textAlign:'center', fontSize:18 }}>Litchi</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -263,6 +270,7 @@ export default function OneTwo() {
                source={require("../../assets/FruitsPic/anarosh.jpg")}
               style={styles.image}
             />
+            <Text style={{textAlign:'center', fontSize:18 }}>Pineapple</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -273,6 +281,7 @@ export default function OneTwo() {
               source={require("../../assets/FruitsPic/Guava.jpg")}
               style={styles.image}
             />
+            <Text style={{textAlign:'center', fontSize:18 }}>Guava</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -283,6 +292,7 @@ export default function OneTwo() {
                 source={require("../../assets/FruitsPic/date.jpg")}
               style={styles.image}
             />
+            <Text style={{textAlign:'center', fontSize:18 }}>Dates</Text>
           </TouchableOpacity>
 
          
@@ -322,10 +332,13 @@ const styles = StyleSheet.create({
     paddingTop: 75, // Add padding to prevent content from overlapping the header
   },
   imageWrapper: {
-    width: "30%",
-    marginBottom: 1,
+    width: "40%",
+    marginBottom: 13,
     borderRadius: 10,
     overflow: "hidden",
+    borderWidth: 1,
+    borderColor: "#000",
+    paddingBottom: 10,
   },
   image: {
     width: "100%",

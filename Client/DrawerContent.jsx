@@ -6,12 +6,12 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const DrawerList = [
   { icon: "home-outline", label: "Home", navigateTo: "Home" },
   { icon: "account-multiple", label: "Profile", navigateTo: "Profile" },
-  { icon: "account-group", label: "User", navigateTo: "User" },
+  {  icon: "account-remove", label: "Delete User Account", navigateTo: "Delete User Account" },
   { icon: "bookshelf", label: "Library", navigateTo: "Library" },
 ];
 
